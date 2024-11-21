@@ -61,6 +61,9 @@ devDependencies:
   tailwindcss:
     specifier: ^3.4.14
     version: 3.4.14
+  tailwindcss-dotted-background:
+    specifier: ^1.1.0
+    version: 1.1.0(tailwindcss@3.4.14)
   vite:
     specifier: ^5.4.10
     version: 5.4.11
@@ -2833,6 +2836,14 @@ packages:
   /supports-preserve-symlinks-flag@1.0.0:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
+    dev: true
+
+  /tailwindcss-dotted-background@1.1.0(tailwindcss@3.4.14):
+    resolution: {integrity: sha512-uFzCW5Bpyn8XgppTkyzqdHecH7XCDaS/eXvegDrOCYE6PxTm7dRrD9cuUcZe6mxQFVfkLu9rDmHJdqbjz9FdLA==}
+    peerDependencies:
+      tailwindcss: ^3.0.0
+    dependencies:
+      tailwindcss: 3.4.14
     dev: true
 
   /tailwindcss@3.4.14:

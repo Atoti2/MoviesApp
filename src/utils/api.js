@@ -1,6 +1,15 @@
 import axios from 'axios'
 
-export const getAllTrending = async () => {
-    const response = await axios.get("https://api.themoviedb.org/3/trending/all/day?api_key=f2e7d342abc71332089fd0b6fdbaa86d")
+export const img_300="https://image.tmdb.org/t/p/w300"
+export const img_500="https://image.tmdb.org/t/p/w500"
+export const og="https://image.tmdb.org/t/p/original"
+export const imgUnavailable="https://www.movienewz.com/img/films/poster-holder.jpg"
+export const noPicture="https://upload.wikimedia.org/wikipedia/en/6/60/No_Picture.jpg"
+export const noPictureLandscape="https://upload.wikimedia.org/wikipedia/commons/a/a6/No_picture_available_png.png"
+
+export const getData = async ({queryKey}) => {
+    const url = queryKey[1]
+    
+    const response = await axios.get(url)
     return response.data
 }

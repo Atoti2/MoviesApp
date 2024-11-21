@@ -26,9 +26,9 @@ const NavBar = () => {
             </ul>
           </div>
         </div>
-        <div className="navbar-center">
+        {/* <div className="navbar-center">
           <a className="btn btn-ghost text-xl">Cool Movies</a>
-        </div>
+        </div> */}
       </div>
 
       <Outlet />
