@@ -2,7 +2,7 @@ import React from 'react'
 import { img_500, og, imgUnavailable } from '../utils/api'
 function Card({title, image, type, airDate, vote, id, description}) {
   return (
-    <div onClick={()=>document.getElementById(id).showModal()} className="card card-compact bg-slate-800 text-slate-100 w-96 shadow-xl hover:scale-105 transition-all cursor-pointer">
+    <div onClick={()=>document.getElementById(id).showModal()} className="card glass bg-slate-800 text-slate-100 w-96 shadow-xl hover:scale-105 transition-all cursor-pointer">
   <figure>
       <span className='absolute right-5 top-5 bg-yellow-500 rounded-md p-1 font-bold min-w-8 text-center'>{vote}</span>
     <img
