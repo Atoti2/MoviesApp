@@ -1,6 +1,22 @@
 import React from 'react'
-import { img_500, og, imgUnavailable } from '../utils/api'
+import { img_500, og, imgUnavailable, getData } from '../utils/api'
+import { useQuery } from '@tanstack/react-query'
+import { Modal } from './Modal'
 function Card({title, image, type, airDate, vote, id, description}) {
+  const urlDetails = `https://api.themoviedb.org/3/${type}/${id}?api_key=${import.meta.env.VITE_API_KEY}`
+  const urlVideos = `https://api.themoviedb.org/3/${type}/${id}/videos?api_key=${import.meta.env.VITE_API_KEY}`
+console.log(urlVideos);
+
+  const {data, isLoading, isError, error} = useQuery({queryKey: ['details', urlDetails], queryFn: getData})
+  const {data: dataVideos, isLoading: isLoadingVideos, isError: isErrorVideos, error: errorVideos} = useQuery({queryKey: ['videos', urlVideos], queryFn: getData})
+
+  if(isLoading || isLoadingVideos){
+    return <div><span className="loading loading-spinner loading-md"></span></div>
+  }
+  if(isError || isErrorVideos){
+      return <div>Error: {error || errorVideos}</div>
+  }
+  
   return (
     <div onClick={()=>document.getElementById(id).showModal()} className="card glass bg-slate-800 text-slate-100 w-96 shadow-xl hover:scale-105 transition-all cursor-pointer">
   <figure>
@@ -17,15 +33,8 @@ function Card({title, image, type, airDate, vote, id, description}) {
     </div>
   </div>
   <dialog id={id} className="modal text-slate-800">
-        <div className="modal-box flex items-center flex-col">
-            <h3 className="font-bold text-lg mb-5">{title}</h3>
-            <img className='rounded-md w-full' src={image ? og + image : imgUnavailable} alt={title} />
-            <p className='mt-5 text-justify font-mono'>{description || "There is no review of this yet."}</p>
-        </div>
-        <form method="dialog" className="modal-backdrop">
-            <button></button>
-        </form>
-        </dialog>
+    <Modal title={title} id={id} type={type} description={description} image={image} tagline={data.tagline} dataVideos={dataVideos}/>
+  </dialog>
 </div>
 )
 }

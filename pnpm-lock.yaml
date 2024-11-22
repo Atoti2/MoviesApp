@@ -14,6 +14,9 @@ dependencies:
   react:
     specifier: ^18.3.1
     version: 18.3.1
+  react-alice-carousel:
+    specifier: ^2.9.1
+    version: 2.9.1(react@18.3.1)
   react-dom:
     specifier: ^18.3.1
     version: 18.3.1(react@18.3.1)
@@ -2492,6 +2495,15 @@ packages:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
     dev: true
 
+  /react-alice-carousel@2.9.1(react@18.3.1):
+    resolution: {integrity: sha512-/wQE4cqogKL/db+SoiiRmdj5j6C9I31pfzrmz8nuXmWmSl/UxxJz/O92W/ryxicTw1au+3mUW+drU3ZAhF3JPA==}
+    peerDependencies:
+      react: '>=15.4'
+    dependencies:
+      react: 18.3.1
+      vanilla-swipe: 2.4.1
+    dev: false
+
   /react-dom@18.3.1(react@18.3.1):
     resolution: {integrity: sha512-5m4nQKp+rZRb09LNH59GM4BxTh9251/ylbKIbpe7TpGxfJ+9kv6BLkLBXIjjspbgbnIBNqlI23tRnTWT0snUIw==}
     peerDependencies:
@@ -2985,6 +2997,10 @@ packages:
   /util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
     dev: true
+
+  /vanilla-swipe@2.4.1:
+    resolution: {integrity: sha512-o6pfI0dipet88ZnPLV4Jx04Ia+U3xANh14vhROW2TOe/mrwk2JGG68+Z0BPoD1YUcQQEnK4SZBXkqFe+K1l7/w==}
+    dev: false
 
   /vite@5.4.11:
     resolution: {integrity: sha512-c7jFQRklXua0mTzneGW9QVyxFjUgwcihC4bXEtujIo2ouWCe1Ajt/amn2PCxYnhYfd5k09JX3SB7OYWFKYqj8Q==}

@@ -25,7 +25,6 @@ if(isLoading){
 if(isError){
     return <div>Error: {error}</div>
 }
-console.log(data);
 
   return (
     <div className='flex flex-wrap items-center justify-center gap-3 mx-5 shadow-xl p-2 py-4 rounded-md my-10'>
