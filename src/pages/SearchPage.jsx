@@ -7,14 +7,15 @@ export const SearchPage = () => {
   const [page, setPage] = useState(1)
   const [searchUrl, setSearchUrl] = useState(`https://api.themoviedb.org/3/search/multi?api_key=${import.meta.env.VITE_API_KEY}&query=Arcane`)
   const handleSearch = (event) => {
-    setSearch(event.target.value)
-    setSearchUrl(`https://api.themoviedb.org/3/search/multi?api_key=${import.meta.env.VITE_API_KEY}&query=${search}`)
-  }
+    const value = event.target.value;
+    setSearch(value);
+    setSearchUrl(`https://api.themoviedb.org/3/search/multi?api_key=${import.meta.env.VITE_API_KEY}&query=${value}`);
+  };
+  
 
   useEffect(() => {
-    setSearchUrl(`https://api.themoviedb.org/3/search/multi?api_key=${import.meta.env.VITE_API_KEY}&query=${search}&page=${page}`)
-
-  }, [page])
+    setSearchUrl(`https://api.themoviedb.org/3/search/multi?api_key=${import.meta.env.VITE_API_KEY}&query=${search}&page=${page}`);
+  }, [page, search]);
   
   return (
     <div className='m-5'>

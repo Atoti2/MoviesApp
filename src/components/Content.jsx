@@ -23,13 +23,17 @@ const Content = ({url, queryKey, setPage}) => {
                 <Card key={item.id} id={item.id} description={item.overview || item.description} vote={item.vote_average} title={item.title || item.name} image={item.poster_path}  airDate={item.first_air_date || item.release_date}
                 type = { item.media_type || 
                 (queryKey !== "movies" && queryKey !== "series" ? "person" : null) || 
-                (queryKey === "movies" ? "movie" : "tv")}
+                (queryKey === "movies" ? "movie" : "tv")
+                
+                }
 
                 /> 
             ))}
     </div>
             <div className='flex gap-5 justify-center my-10'>
-                <button onClick={(page) => setPage(page > 0 ? page - 1 : 1)}  className='btn'>Previous page</button>
+            <button onClick={() => setPage((prevPage) => (prevPage > 1 ? prevPage - 1 : 1))} className="btn">
+                Previous page
+                </button>
                 <button 
                     onClick={() => setPage(prevPage => (prevPage < data.total_pages ? prevPage + 1 : data.total_pages))}
                     className='btn'>
