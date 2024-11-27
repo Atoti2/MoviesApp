@@ -11,7 +11,8 @@ export const SearchPage = () => {
     setSearch(event.target.value)
   }
 
-  const handleSearch = (event) => {
+  const handleSearch = () => {
+    setPage(1)
     setSearchUrl(`https://api.themoviedb.org/3/search/multi?api_key=${import.meta.env.VITE_API_KEY}&query=${search}`);
   };
   
@@ -31,7 +32,7 @@ export const SearchPage = () => {
           value={search} 
           onChange={handleInputChange}
         />
-        <button className='btn ml-3' onClick={handleSearch}>search</button>
+        <button className='btn ml-3' onClick={handleSearch}>Search</button>
       </div>
       <Content url={searchUrl} queryKey="search" setPage={setPage} />
     </div>
