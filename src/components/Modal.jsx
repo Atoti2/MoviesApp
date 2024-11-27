@@ -3,9 +3,11 @@ import { og, noPictureLandscape } from '../utils/api';
 import { Carousel } from './Carousel';
 
 export const Modal = ({ title, description, image, tagline, id, type, dataVideos }) => {
-    console.log(dataVideos?.results[0]);
   return (
     <div className="modal-box flex items-center flex-col">
+       <form method="dialog" className="modal-backdrop">
+      <button className='btn w-fit text-xl text-yellow-500'>X</button>
+    </form>
       <h3 className="font-bold text-lg mb-5">{title}</h3>
       <img className="rounded-md w-full" src={image ? og + image : noPictureLandscape} alt={title} />
       <p className="mt-5">{tagline}</p>
@@ -22,6 +24,7 @@ export const Modal = ({ title, description, image, tagline, id, type, dataVideos
             </a>
         </div>
     }
+   
     </div>
   );
 };

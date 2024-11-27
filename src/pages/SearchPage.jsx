@@ -11,15 +11,18 @@ export const SearchPage = () => {
     setSearch(event.target.value)
   }
 
-  const handleSearch = () => {
-    setPage(1)
-    setSearchUrl(`https://api.themoviedb.org/3/search/multi?api_key=${import.meta.env.VITE_API_KEY}&query=${search}&page=${page}`)
-  }
+  const handleSearch = (event) => {
+    const value = event.target.value;
+    setSearch(value);
+    setSearchUrl(`https://api.themoviedb.org/3/search/multi?api_key=${import.meta.env.VITE_API_KEY}&query=${value}`);
+  };
+  
 
   useEffect(() => {
     setSearchUrl(`https://api.themoviedb.org/3/search/multi?api_key=${import.meta.env.VITE_API_KEY}&query=${search}&page=${page}`)
   }, [page])
 
+  
   return (
     <div className='m-5'>
       <div className='flex justify-center'>
