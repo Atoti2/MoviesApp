@@ -20,7 +20,7 @@ const Content = ({url, queryKey, setPage}) => {
     <>
     <div className='flex flex-wrap gap-8 m-5 justify-center '>
             {data.results?.map((item) => (
-                <Card key={item.id} id={item.id} description={item.overview || item.description} vote={item.vote_average} title={item.title || item.name} image={item.poster_path}  airDate={item.first_air_date || item.release_date}
+                <Card key={item.id} id={item.id} description={item.overview || item.description} vote={item.vote_average} title={item.title || item.name} image={item.poster_path || item.known_for?.[0].backdrop_path}  airDate={item.first_air_date || item.release_date}
                 type = { item.media_type || 
                 (queryKey !== "movies" && queryKey !== "series" ? "person" : null) || 
                 (queryKey === "movies" ? "movie" : "tv")}
