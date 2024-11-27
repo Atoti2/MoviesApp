@@ -14,7 +14,6 @@ const Content = ({url, queryKey, setPage}) => {
         return <div>Error: {error}</div>
     }
     
-    console.log(data);
     
   return (
     <>

@@ -12,9 +12,7 @@ export const SearchPage = () => {
   }
 
   const handleSearch = (event) => {
-    const value = event.target.value;
-    setSearch(value);
-    setSearchUrl(`https://api.themoviedb.org/3/search/multi?api_key=${import.meta.env.VITE_API_KEY}&query=${value}`);
+    setSearchUrl(`https://api.themoviedb.org/3/search/multi?api_key=${import.meta.env.VITE_API_KEY}&query=${search}`);
   };
   
 
